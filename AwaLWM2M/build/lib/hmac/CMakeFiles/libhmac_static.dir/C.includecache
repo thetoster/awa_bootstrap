@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/lib/hmac/hmac.c
+stdio.h
+-
+stdint.h
+-
+string.h
+-
+

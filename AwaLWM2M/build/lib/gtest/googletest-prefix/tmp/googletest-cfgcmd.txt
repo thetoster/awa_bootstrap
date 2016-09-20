@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-GUnix Makefiles;/home/tusnio/ci40_project/awacontiki/AwaLWM2M/build/gtest-src'

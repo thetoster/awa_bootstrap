@@ -1,0 +1,1 @@
+/usr/bin/cc   -ggdb    CMakeFiles/server-execute-arguments-example.dir/server-execute-arguments-example.c.o  -o server-execute-arguments-example -rdynamic ../src/libawa.a ../../lib/xml/libxml.a ../../lib/b64/libb64.a ../../lib/hmac/libhmac.a 

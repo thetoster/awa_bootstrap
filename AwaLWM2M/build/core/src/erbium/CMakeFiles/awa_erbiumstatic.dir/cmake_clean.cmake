@@ -1,0 +1,14 @@
+FILE(REMOVE_RECURSE
+  "CMakeFiles/awa_erbiumstatic.dir/er-coap.c.o"
+  "CMakeFiles/awa_erbiumstatic.dir/er-coap-engine.c.o"
+  "CMakeFiles/awa_erbiumstatic.dir/er-coap-transactions.c.o"
+  "CMakeFiles/awa_erbiumstatic.dir/er-coap-separate.c.o"
+  "CMakeFiles/awa_erbiumstatic.dir/er-coap-block1.c.o"
+  "liberbiumstatic.pdb"
+  "liberbiumstatic.a"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang C)
+  INCLUDE(CMakeFiles/awa_erbiumstatic.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

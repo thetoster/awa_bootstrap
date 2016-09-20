@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/api/tests/support/main/main_cmdline.c
+config.h
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/api/tests/support/main/config.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+main_cmdline.h
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/api/tests/support/main/main_cmdline.h
+
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/api/tests/support/main/main_cmdline.h
+config.h
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/api/tests/support/main/config.h
+stdio.h
+-
+

@@ -1,0 +1,99 @@
+/*
+ * Copyright (c) 2016, Cascoda Limited
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors
+ * may be used to endorse or promote products derived from this software without
+ * specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ */
+
+#ifdef __USE_UART__
+
+#include <debug-uart.h>
+#include <pic32_uart.h>
+
+#include <dev/serial-line.h>
+
+#define DEBUG 0
+#if DEBUG
+#include <stdio.h>
+#define PRINTF(...) printf(__VA_ARGS__)
+#else
+#define PRINTF(...)
+#endif
+
+int ca8210_uart_15_4_interrupt(unsigned char c);
+
+#define DEBUG_UART(XX, YY)                            \
+  void                                                \
+  _mon_putc(char c)                                   \
+  {                                                   \
+    pic32_uart##XX##_write(c);                        \
+  }                                                   \
+                                                      \
+  void                                                \
+  dbg_setup_uart(unsigned long ubr)                   \
+  {                                                   \
+    pic32_uart##XX##_init(ubr, 0);                    \
+                                                      \
+    PRINTF("Initializing debug uart: %lubps\n", ubr); \
+  }                                                   \
+                                                      \
+  UART_INTERRUPT(XX, YY, ca8210_uart_15_4_interrupt);
+
+
+#ifdef __32MX795F512L__
+  #ifdef __USE_UART_PORT1A_FOR_15_4_DEBUG__ || __USE_UART_PORT1A_FOR_15_4_GUI__
+  DEBUG_UART(1A, 0);
+  #elif defined  __USE_UART_PORT1A_FOR_15_4_DEBUG__ || __USE_UART_PORT1A_FOR_15_4_GUI__
+  DEBUG_UART(1B, 2);
+  #elif defined  __USE_UART_PORT2A_FOR_15_4_DEBUG__ || __USE_UART_PORT2A_FOR_15_4_GUI__
+  DEBUG_UART(2A, 1);
+  #elif defined  __USE_UART_PORT2B_FOR_15_4_DEBUG__ || __USE_UART_PORT2B_FOR_15_4_GUI__
+  DEBUG_UART(2B, 2);
+  #elif defined  __USE_UART_PORT3A_FOR_15_4_DEBUG__ || __USE_UART_PORT3A_FOR_15_4_GUI__
+  DEBUG_UART(3A, 1);
+  #elif defined  __USE_UART_PORT3B_FOR_15_4_DEBUG__ || __USE_UART_PORT3B_FOR_15_4_GUI__
+  DEBUG_UART(3B, 2);
+  #else
+  DEBUG_UART(1A);
+  #endif
+#endif /* __32MX795F512L__ */
+
+#ifdef __32MX470F512H__
+  #if defined __USE_UART_PORT1_FOR_15_4_DEBUG__ || __USE_UART_PORT1_FOR_15_4_GUI__
+  DEBUG_UART(1, 1);
+  #elif defined  __USE_UART_PORT2_FOR_15_4_DEBUG__ || __USE_UART_PORT2_FOR_15_4_GUI__
+  DEBUG_UART(2, 1);
+  #elif defined  __USE_UART_PORT3_FOR_15_4_DEBUG__ || __USE_UART_PORT3_FOR_15_4_GUI__
+  DEBUG_UART(3, 1);
+  #elif defined  __USE_UART_PORT4_FOR_15_4_DEBUG__ || __USE_UART_PORT4_FOR_15_4_GUI__
+  DEBUG_UART(4, 2);
+  #endif
+#endif /* __32MX470F512H__ */
+
+#endif /* __USE_UART__*/
+
+/** @} */

@@ -1,0 +1,1 @@
+/usr/bin/cc   -ggdb    CMakeFiles/server-write-example.dir/server-write-example.c.o  -o server-write-example -rdynamic ../src/libawa.a ../../lib/xml/libxml.a ../../lib/b64/libb64.a ../../lib/hmac/libhmac.a 

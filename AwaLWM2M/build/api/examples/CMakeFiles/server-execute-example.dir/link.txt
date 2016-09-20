@@ -1,0 +1,1 @@
+/usr/bin/cc   -ggdb    CMakeFiles/server-execute-example.dir/server-execute-example.c.o  -o server-execute-example -rdynamic ../src/libawa.a ../../lib/xml/libxml.a ../../lib/b64/libb64.a ../../lib/hmac/libhmac.a 

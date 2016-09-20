@@ -1,0 +1,4 @@
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/build/gtest-build/googlemock/CMakeFiles/gmock.dir
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/build/gtest-build/googlemock/CMakeFiles/gmock_main.dir
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/build/gtest-build/googlemock/gtest/CMakeFiles/gtest.dir
+/home/tusnio/ci40_project/awacontiki/AwaLWM2M/build/gtest-build/googlemock/gtest/CMakeFiles/gtest_main.dir

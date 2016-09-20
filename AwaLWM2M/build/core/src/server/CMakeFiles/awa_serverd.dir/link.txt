@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Werror -Wno-pointer-sign -g -DVERSION='"0.2.3"' -D_GNU_SOURCE    CMakeFiles/awa_serverd.dir/lwm2m_server.c.o  -o awa_serverd -rdynamic liblwm2mserver.a ../common/liblwm2mcommon.a ../../../lib/xml/libxml.a ../erbium/liberbiumstatic.a ../../../lib/b64/libb64.a ../../../lib/hmac/libhmac.a 

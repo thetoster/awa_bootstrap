@@ -1,0 +1,1 @@
+/usr/bin/cc   -ggdb    CMakeFiles/static-client-tutorial3.dir/static-client-tutorial3.c.o  -o static-client-tutorial3 -rdynamic ../../src/libawa.a ../../../core/src/client/libawa_static.a ../../../lib/xml/libxml.a ../../../core/src/common/liblwm2mcommon.a ../../../lib/xml/libxml.a ../../../core/src/erbium/liberbiumstatic.a ../../../lib/b64/libb64.a ../../../lib/hmac/libhmac.a 

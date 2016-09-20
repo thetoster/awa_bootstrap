@@ -1,0 +1,1 @@
+/usr/bin/cc   -ggdb    CMakeFiles/server-event-example.dir/server-event-example.c.o  -o server-event-example -rdynamic ../src/libawa.a ../../lib/xml/libxml.a ../../lib/b64/libb64.a ../../lib/hmac/libhmac.a 
