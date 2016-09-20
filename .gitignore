@@ -31,3 +31,11 @@
 # Debug files
 *.dSYM/
 *.su
+
+*.map
+*.mikro-e
+
+symbols.c
+symbols.h
+
+obj_mikro-e
